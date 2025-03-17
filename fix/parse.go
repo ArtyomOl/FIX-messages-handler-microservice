@@ -21,3 +21,11 @@ func ParseFixMessages(message string) (map[int]string, error) {
 	}
 	return result, nil
 }
+
+func AddFixMessage(message string) error {
+	_, err := ParseFixMessages(message)
+	if err != nil {
+		return err
+	}
+	return nil
+}
