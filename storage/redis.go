@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"FIX-messages-handler-API/fix"
+	"FIX-messages-handler-API/orders"
 	"context"
 	"fmt"
 	"strconv"
@@ -48,7 +48,7 @@ func AddOrder(client *redis.Client, symbol string, price float64, quantity int, 
 	}).Err()
 }
 
-func GetOrderBook(client *redis.Client, symbol string, depth int) (*fix.OrderBook, error) {
+func GetOrderBook(client *redis.Client, symbol string, depth int) (*orders.OrderBook, error) {
 	bidsKey := fmt.Sprintf("%s:bids", symbol)
 	asksKey := fmt.Sprintf("%s:asks", symbol)
 
@@ -61,7 +61,7 @@ func GetOrderBook(client *redis.Client, symbol string, depth int) (*fix.OrderBoo
 	if err != nil {
 		return nil, err
 	}
-	var orderBook fix.OrderBook
+	var orderBook orders.OrderBook
 	orderBook.Symbol = symbol
 	for _, z := range asks {
 		quantity_str, ok := z.Member.(string)

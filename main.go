@@ -26,10 +26,7 @@ func main() {
 		panic(err)
 	}
 
-	storage.AddOrder(redis_client, "AAPL", 123.15, 20, "asks")
-	storage.AddOrder(redis_client, "AAPL", 123.65, 10, "asks")
-	storage.AddOrder(redis_client, "AAPL", 123.65, 10, "bids")
-	storage.AddOrder(redis_client, "AAPL", 123.75, 10, "bids")
+	go server.StartConsumer(redis_client)
 
 	r := mux.NewRouter()
 

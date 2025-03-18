@@ -5,6 +5,7 @@ go 1.23.4
 require (
 	github.com/IBM/sarama v1.45.1
 	github.com/gorilla/mux v1.8.1
+	github.com/redis/go-redis/v9 v9.7.1
 )
 
 require (
@@ -26,7 +27,6 @@ require (
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/pierrec/lz4/v4 v4.1.22 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
-	github.com/redis/go-redis/v9 v9.7.1 // indirect
 	golang.org/x/crypto v0.33.0 // indirect
 	golang.org/x/net v0.35.0 // indirect
 )
