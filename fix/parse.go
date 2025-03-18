@@ -10,7 +10,7 @@ import (
 )
 
 func ParseFixMessages(message string) (map[int]string, error) {
-	fields := strings.Split(message, ",")
+	fields := strings.Split(message, "|")
 	var result = make(map[int]string)
 	for _, field := range fields {
 		parts := strings.Split(field, "=")
