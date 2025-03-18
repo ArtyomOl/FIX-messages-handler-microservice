@@ -72,7 +72,7 @@ func GetOrderBook(client *redis.Client, symbol string, depth int) (*orders.Order
 		if err != nil {
 			return nil, err
 		}
-		orderBook.AsksQantility = append(orderBook.AsksQantility, quantity)
+		orderBook.AsksQantity = append(orderBook.AsksQantity, quantity)
 		orderBook.AsksPrices = append(orderBook.AsksPrices, z.Score)
 	}
 	for _, z := range bids {
@@ -84,7 +84,7 @@ func GetOrderBook(client *redis.Client, symbol string, depth int) (*orders.Order
 		if err != nil {
 			return nil, err
 		}
-		orderBook.BidsQuantility = append(orderBook.AsksQantility, quantity)
+		orderBook.BidsQuantity = append(orderBook.AsksQantity, quantity)
 		orderBook.BidsPrices = append(orderBook.AsksPrices, z.Score)
 	}
 
